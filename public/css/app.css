@@ -1,0 +1,179 @@
+html {
+  color: #606060 !important;
+  font-size: 18px;
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  background: url("/img/bg.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 16px; } }
+  @media (max-width: 1000px) {
+    html {
+      font-size: 14px; } }
+  html h1, html h2, html h3, html h4, html h5, html h6, html input, html textarea, html select, html button, html p {
+    color: #606060;
+    font-family: 'Open Sans Condensed', sans-serif !important; }
+
+body a {
+  color: #008bc0;
+  transition: color 0.2s; }
+  body a:hover {
+    color: #00668d; }
+
+/* FORM */
+input, textarea, select {
+  border: 1px solid #e2f1f7 !important;
+  padding: 0.5em;
+  font-size: 1em; }
+
+/* TAKKI */
+.takki,
+a.takki,
+button.takki {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  padding: 0.8em 1.6em;
+  display: inline-block !important;
+  font-weight: 700 !important;
+  background: #FFF !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  border: 2px solid #008bc0 !important;
+  color: #008bc0 !important;
+  transition: color 0.2s, background 0.2s; }
+  .takki.focus, .takki.active, .takki:hover,
+  a.takki.focus,
+  a.takki.active,
+  a.takki:hover,
+  button.takki.focus,
+  button.takki.active,
+  button.takki:hover {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 0.8em 1.6em;
+    cursor: pointer;
+    display: inline-block !important;
+    background: #00668d !important;
+    border: 2px solid #00668d !important;
+    color: #FFF !important; }
+
+/* NAV */
+nav.top {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: distribute;
+  align-content: space-around;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+  flex: 1 1 100%; }
+  nav.top a {
+    font-size: 1.2em;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 0.6em 0.3em;
+    white-space: nowrap;
+    text-align: center;
+    color: #008bc0;
+    transition: color 0.2s, background 0.2s;
+    font-weight: 700; }
+    nav.top a:hover {
+      color: #00668d;
+      background: #e2f1f7; }
+  nav.top > div.active > a {
+    color: #00668d;
+    background: #e2f1f7; }
+  nav.top .being_viewed > a {
+    color: #00668d;
+    background: #e2f1f7; }
+  nav.top > div {
+    border-right: 1px solid #e2f1f7;
+    position: relative;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%; }
+    nav.top > div:first-child {
+      margin-left: 0.5em;
+      border-left: 1px solid #e2f1f7; }
+    nav.top > div:last-child {
+      margin-right: 0.5em; }
+    nav.top > div.opened > div {
+      display: block; }
+    nav.top > div > div {
+      border: 1px solid #e2f1f7;
+      background: rgba(255, 255, 255, 0.9);
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      display: none; }
+      nav.top > div > div a {
+        font-size: 1em;
+        border-bottom: 1px solid #e2f1f7; }
+      nav.top > div > div:last-child {
+        border-bottom: 0px solid #e2f1f7 !important; }
+
+/* CONTAINERS */
+header h1 {
+  font-size: 140%; }
+
+.menu {
+  position: relative;
+  z-index: 100;
+  border-top: 1px solid #e2f1f7;
+  border-bottom: 1px solid #e2f1f7;
+  background: rgba(255, 255, 255, 0.9); }
+
+.content {
+  box-sizing: border-box;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 600px; }
+
+.haus {
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.9); }
+
+.footer {
+  background: rgba(96, 96, 96, 0.9);
+  min-height: 200px;
+  width: 100%;
+  display: block; }
+
+/* CARD */
+.card {
+  position: relative;
+  display: block;
+  transition: background 0.2s;
+  background: #e2f1f7; }
+  .card:hover {
+    background: #eaf5f9; }
+    .card:hover .card__image {
+      opacity: 0.8; }
+  .card__image {
+    transition: opacity 0.2s;
+    position: relative;
+    display: block;
+    background-color: #FFF;
+    border: 1px solid #e2f1f7;
+    min-height: 240px; }
+  .card__text {
+    font-weight: 700;
+    padding: 0.6em;
+    position: relative;
+    display: block;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+
+/*# sourceMappingURL=app.css.map */

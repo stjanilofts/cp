@@ -1,0 +1,122 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use Faker\Factory;
+
+
+function getImages($number) {
+    $images = [];
+
+    $dir = scandir(public_path('tmp'));
+
+    $repository = [];
+
+    foreach($dir as $k => $v) {
+        if($v != '.' && $v != '..') {
+            $arr = explode('.', $v);
+            $extension = end($arr);
+            $name = $arr[0];
+
+            if(is_numeric($name)) {
+                $repository[] = $v;
+            }
+        }
+    }
+
+    for($i = 1; $i < $number; $i++) {
+        $repoCount = count($repository);
+
+        $rand = (mt_rand(1, $repoCount) - 1);
+
+        $filename = $repository[$rand];
+
+        $file = public_path('tmp/'.$filename);
+
+        $images[] = [
+            'name' => $filename,
+            'title' => $filename
+        ];
+    }
+
+    return $images;
+}
+
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Model::unguard();
+
+        // Notendur
+        \App\User::create([
+            'name' => 'Netvistun',
+            'email' => 'vinna@netvistun.is',
+            'password' => bcrypt(env('NETVISTUN')),
+            'remember_token' => str_random(10),
+        ]);
+
+        $faker = Faker\Factory::create();
+
+        function makePage($page = []) {
+            $page['slug'] = isset($page['slug']) ? $page['slug'] : str_slug($page['title']);
+            $page['images'] = isset($page['images']) ? $page['images'] : [];
+
+            return factory(\App\Page::class)->create($page);
+        }
+
+        function makeProduct($page = []) {
+            $page['slug'] = isset($page['slug']) ? $page['slug'] : str_slug($page['title']);
+            $page['images'] = isset($page['images']) ? $page['images'] : [];
+
+            return factory(\App\Product::class)->create($page);
+        }
+
+        function makeCategory($page = []) {
+            $page['slug'] = isset($page['slug']) ? $page['slug'] : str_slug($page['title']);
+            $page['images'] = isset($page['images']) ? $page['images'] : [];
+
+            return factory(\App\Category::class)->create($page);
+        }
+
+        $pages = [
+            'Vörur', 'Af hverju húðslípun?', 'Hafa samband'
+        ];
+
+        $um_okkur = makePage(['title' => 'Um Crystal Peel', 'slug' => 'um-okkur']);
+
+        makePage(['slug' => 'starfsfolk', 'title' => 'Starfsfólk', 'parent_id' => $um_okkur->id]);
+        makePage([
+            'slug' => 'stadsetning',
+            'title' => 'Staðsetning',
+            'parent_id' => $um_okkur->id,
+            'content' => '<iframe width="100%" height="400" frameborder="0" src="http://ja.is/kort/embedded/?zoom=10&x=359824&y=406933&layer=map&q=Kleifar%C3%A1s+ehf+heildverslun%2C+%C3%81rm%C3%BAla+22"></iframe>',
+        ]);
+
+        foreach($pages as $page) {
+            makePage(['title' => $page]);
+        }
+
+        $pics = ['slide1.jpg', 'slide2.jpg', 'slide3.jpg', 'slide4.jpg', 'slide5.jpg'];
+        $forsidumyndir = makePage(['title' => 'Forsíðumyndir', 'slug' => '_forsidumyndir', 'status' => 0]);
+        foreach($pics as $k => $v) {
+            makePage(['title' => $v, 'parent_id' => $forsidumyndir->id, 'images' => [['name'=>$v]]]);
+        }
+
+        $flokkur1 = makeCategory(['title' => 'Flokkur 1', 'images' => getImages(3)]);
+        $flokkur2 = makeCategory(['title' => 'Flokkur 2', 'images' => getImages(3)]);
+
+        for($i = 0; $i < 50; $i++) {
+            $images = getImages(8);
+            makeProduct(['title' => $faker->sentence(3), 'category_id' => mt_rand(1,8), 'images' => $images]);
+        }
+
+        Model::reguard();
+    }
+}
