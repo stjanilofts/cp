@@ -218,11 +218,12 @@ function kalMenuExpanded() {
     return kalMenu();
 }
 
-function kalMenuExpandedAll() {
-    return kalMenu([
+function kalMenuExpandedAll($args = []) {
+    $merged = array_merge($args, [
         'expand_all' => true,
         'hidden' => false
     ]);
+    return kalMenu($merged);
 }
 
 
@@ -295,7 +296,7 @@ function kalMenu($args = array(), $pages = false, $lvl = 1, &$menu = "", &$paths
             $smooth = stringStartsWith($page->url, '#') ? 'data-uk-smooth-scroll="{offset:30}"' : '';
         }
 
-        $menu .= "<div class='lvl-{$lvl} {$active} {$being_viewed} {$has_subs}'><a href='{$_link}'><span>{$title}</span></a>";
+        $menu .= "<div class='".(array_key_exists('hidesmall', $args) ? 'uk-hidden-small' : '')." lvl-{$lvl} {$active} {$being_viewed} {$has_subs}'><a href='{$_link}'><span>{$title}</span></a>";
 
         if($active || (isset($args['expand_all']) && $args['expand_all'])) {
             if(! $subs->isEmpty()) {

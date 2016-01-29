@@ -1,5 +1,8 @@
 <?php
 
+Route::get('vorur', 'VorukerfiController@index');
+Route::get('vorur/{slug?}', 'VorukerfiController@show')->where(['slug' => '.*']);
+
 Route::get('/', 'HomeController@home');
 
 /*Route::get('make', function() {
@@ -11,8 +14,9 @@ Route::get('/', 'HomeController@home');
     ]);
 });*/
 
-Route::get('vorur', 'VorukerfiController@index');
-Route::get('vorur/{slug?}', 'VorukerfiController@show')->where(['slug' => '.*']);
+/*Route::get('vorur2', function() {
+    return 'what';
+});*/
 
 Route::post('hafa-samband', 'ContactController@postContact');
 

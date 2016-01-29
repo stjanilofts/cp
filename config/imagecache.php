@@ -31,6 +31,7 @@ return array(
     */
     
     'paths' => array(
+        public_path('prods'),
         public_path('tmp'),
         public_path('uploads'),
         public_path('img'),

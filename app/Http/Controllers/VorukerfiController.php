@@ -15,7 +15,12 @@ class VorukerfiController extends Controller
         $cats   = \App\Category::where('status', 1)->where('parent_id', 0)->orderBy('order')->get();
         $prods  = \App\Product::where('status', 1)->where('category_id', 0)->orderBy('order')->get();
 
-        $data['items'] = $cats->merge($prods);
+        if($cats) {
+            $data['items'] = $cats->merge($prods);
+        } else {
+            $data['items'] = $prods;
+        }
+
         $data['pagetitle'] = 'Vörur';
 
         return view('frontend.products')->with($data);

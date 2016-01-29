@@ -43,19 +43,19 @@
 							<option value="{{ $p }}">{{ $p }}</option>
 						@endforeach
 					</select>
+					<small class="uk-display-inline-block uk-margin-small-top" v-if="errors.pnr"><i class="uk-icon-exclamation-triangle uk-margin-right"></i>@{{ errors.pnr }}</small>
 				</label>
-				<small class="uk-display-inline-block uk-margin-small-top" v-if="errors.pnr"><i class="uk-icon-exclamation-triangle uk-margin-right"></i>@{{ errors.pnr }}</small>
 			</div>
 
 			<div class="uk-width-medium-1-2">
-				<label :class="{ 'uk-text-danger': errors.stadur }">Staður<br>
+				<label :class="{ 'errors': errors.stadur }">Staður<br>
 					<input class="uk-width-1-1" v-model="newOrder.stadur" type="text" name="stadur" />
 					<small class="uk-display-inline-block uk-margin-small-top" v-if="errors.stadur"><i class="uk-icon-exclamation-triangle uk-margin-right"></i>@{{ errors.stadur }}</small>
 				</label>
 			</div>
 
 			<div class="uk-width-1-1 uk-margin-large-top">
-				<h3><i class="uk-icon-user uk-margin-right"></i>Valkostir</h3>
+				<h3><i class="uk-icon-question-circle uk-margin-right"></i>Valkostir</h3>
 			</div>
 			
 			<div class="uk-width-medium-1-2">

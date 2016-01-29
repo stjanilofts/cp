@@ -8,11 +8,13 @@
 		<div class="uk-grid" data-uk-grid-margin data-uk-grid-match>
 			<div class="uk-width-medium-1-2">
 				<div class="uk-grid uk-grid-small" data-uk-grid-margin>
-					<div class="uk-width-1-1">
-						<div class="product__mynd">
-							<a title="{{ $image['title'] != $image['name'] ? $image['title'] : '' }}" href="/imagecache/original/{{ $image['name'] }}" data-uk-lightbox="{group:'myndir'}" /><img src="/imagecache/product/{{ $image['name'] }}" /></a>
+					@if(isset($image))
+						<div class="uk-width-1-1">
+							<div class="product__mynd">
+								<a title="{{ $image['title'] != $image['name'] ? $image['title'] : '' }}" href="/imagecache/original/{{ $image['name'] }}" data-uk-lightbox="{group:'myndir'}" /><img src="/imagecache/product/{{ $image['name'] }}" /></a>
+							</div>
 						</div>
-					</div>
+					@endif
 
 					@if(count($images) > 1)
 						<div class="uk-width-1-1">
@@ -74,7 +76,7 @@
 					</div>
 
 					<div class="uk-margin-top">
-						<h3>Verð @{{ priceFormatted(price) }}</h3>
+						<div class="product__price">Verð @{{ priceFormatted(price) }}</div>
 					</div>
 
 					<div class="uk-margin-top">

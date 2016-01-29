@@ -62,6 +62,142 @@ class DatabaseSeeder extends Seeder
             'remember_token' => str_random(10),
         ]);
 
+
+
+        $vorur = [
+            [
+                'category_id' => 0,
+                'title' => 'Ávaxtasýrupúðar',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'fruit-extract-pads-500x5001.png',
+                        'title' => 'Ávaxtasýrupúðar',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Ferðasett skrúbb og sápa',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'body-bar-travel1.png',
+                        'title' => 'Ferðasett skrúbb og sápa',
+                    ],
+                    [
+                        'name' => 'small-travel-tube.png',
+                        'title' => 'Ferðasett skrúbb og sápa',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Gjafasett Dömu',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'womens-gift-set.png',
+                        'title' => 'Gjafasett Dömu',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Gjafasett Herra',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'mens-gift-set-500x5001.png',
+                        'title' => 'Gjafasett Herra',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Húðslípikrem Dömu',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'womens-tube.png',
+                        'title' => 'Húðslípikrem Dömu',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Húðslípikrem Herra',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'microdermabrasion-exfo-men-2.png',
+                        'title' => 'Húðslípikrem Herra',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Húðslípisápa stór Lemongras',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'hudslipisapa-stor-lemongras.jpg',
+                        'title' => 'Húðslípisápa stór Lemongras',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Húðslípisápa stór Lavender',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'lavendar-soap.png',
+                        'title' => 'Húðslípisápa stór Lavender',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+            [
+                'category_id' => 0,
+                'title' => 'Varaskrúbbur og Varalyftir',
+                'content' => '',
+                'images' => [
+                    [
+                        'name' => 'lip-exfoliator1.png',
+                        'title' => 'Varaskrúbbur og Varalyftir',
+                    ],
+                    [
+                        'name' => 'lip-plumper.png',
+                        'title' => 'Varaskrúbbur og Varalyftir',
+                    ],
+                    [
+                        'name' => 'lips-plump-tripple.png',
+                        'title' => 'Varaskrúbbur og Varalyftir',
+                    ],
+                ],
+                'status' => 1,
+                'options' => []
+            ],
+        ];
+
+
+
         $faker = Faker\Factory::create();
 
         function makePage($page = []) {
@@ -112,9 +248,8 @@ class DatabaseSeeder extends Seeder
         $flokkur1 = makeCategory(['title' => 'Flokkur 1', 'images' => getImages(3)]);
         $flokkur2 = makeCategory(['title' => 'Flokkur 2', 'images' => getImages(3)]);
 
-        for($i = 0; $i < 50; $i++) {
-            $images = getImages(8);
-            makeProduct(['title' => $faker->sentence(3), 'category_id' => mt_rand(1,8), 'images' => $images]);
+        foreach($vorur as $vara) {
+            makeProduct($vara);
         }
 
         Model::reguard();

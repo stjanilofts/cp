@@ -4,9 +4,9 @@ $blue-lite: desaturate(lighten($blue, 55%), 44%);
 $blue-lite-border: 1px solid $blue-lite;
 $grey: #606060;
 $grey2: lighten($grey, 50%);
-$bg-white: rgba(255, 255, 255, 0.9);
-$bg-white2: rgba(255, 255, 255, 0.8);
-$bg-white3: rgba(255, 255, 255, 0.7);
+$bg-white: rgba(255, 255, 255, 0.95);
+$bg-white2: rgba(255, 255, 255, 0.85);
+$bg-white3: rgba(255, 255, 255, 0.75);
 $bg-grey: rgba($grey, 0.95);
 $bg-grey2: rgba($grey, 0.85);
 $bg-grey3: rgba($grey, 0.75);
@@ -25,6 +25,19 @@ html {
 
 	font-size: 18px;
 	line-height: 1.6em;
+
+	h1 {
+		font-size: 40px;
+    	line-height: 44px;
+	}
+	h2 {
+		font-size: 30px;
+    	line-height: 36px;
+	}
+	h3 {
+		font-size: 24px;
+    	line-height: 30px;
+	}
 
 	@media (max-width: 1200px) {
 		font-size: 16px;
@@ -71,6 +84,27 @@ input, textarea, select {
 	border: 1px solid $blue-lite !important;
 	padding: 0.5em;
 	font-size: 1em;
+}
+form {
+	&.basic {
+		h3 {
+			padding-bottom: 1em;
+		}
+		label {
+			display: block;
+			padding-bottom: 1em;
+			background: none;
+			color: inherit;
+			transition: color 0.2s, background 0.2s;
+			&.errors {
+				color: #ff0033 !important;
+				input, select, textarea {
+					color: #FFF !important;
+					background: lighten(desaturate(#ff0033, 25%), 25%) !important;
+				}
+			}
+		}
+	}
 }
 
 
@@ -139,7 +173,68 @@ button.takki {
 
 
 /* NAV */
+.uk-offcanvas-bar {
+	background: $blue;
+}
 nav {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&.submenu {
+		div {
+			&.being_viewed {
+				a {
+					text-decoration: none;
+					background: $blue-dark;					
+				}
+			}
+			a {
+				background: $blue;
+				font-weight: 600;
+				color: #FFF;
+				border: 1px solid $blue-lite;
+				padding: 0.5em;
+				margin-bottom: 0.5em;
+				display: block;
+				transition: background 0.2s;
+
+				&:hover {
+					text-decoration: none;
+					background: $blue-dark;
+				}
+			}
+		}
+	}
+
+	&.offcanvas {
+		div {
+			display: block;
+			padding: 0;
+			margin: 0;
+			&.being_viewed {
+				> a {
+					background: $blue-dark;
+				}
+			}
+			a {
+				font-weight: 600;
+				font-size: 120%;
+				display: block;
+				padding: 0.5em;
+				border-bottom: 1px solid $blue-dark;
+				margin: 0;
+				color: #FFF;
+				&:hover {
+					text-decoration: none;
+					color: #FFF;
+				}
+			}
+		}
+	}
+
 	&.top {
 		max-width: $max-width;
 		margin: 0 auto;
@@ -151,7 +246,7 @@ nav {
 		a {
 			font-size: 1em;
 			text-decoration: none;
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
 			display: block;
 			padding: 0.6em 0.9em;
 			white-space: nowrap;
@@ -227,10 +322,87 @@ nav {
 
 
 
+/* CART */
+#cart {
+	.cart-table-container {
+		position: relative;
+		display: block;
+		margin-bottom: 1em;
+
+		.updating-cart {
+			background: rgba($blue, 0);
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.2s, background 0.2s;
+
+			&.active {
+				opacity: 1;
+				pointer-events:	auto;
+				background: rgba($blue, 0.2);
+			}
+		}
+	}
+
+	table.cart-table {
+		background: #FFF;
+		border: 1px solid $blue-lite;
+		width: 100%;
+
+		th, td {
+			padding: 0.5em !important;
+
+			img {
+				border: 1px solid $blue-lite;
+			}
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
 
 
 
 
+
+
+/* AUKA */
+.table-tech {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	
+	tr {
+		padding: 0;
+		margin: 0;
+		border-bottom: 1px dotted #DDD;
+	}
+
+	td {
+		font-size: 0.85em;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+
+	td:first-child {
+		padding-left: 0 !important;
+		text-align: left;
+		font-weight: bold;
+	}
+	td:last-child {
+		padding-right: 0 !important;
+		text-align: right;
+	}
+}
 
 
 
@@ -241,6 +413,20 @@ nav {
 
 /* PRODUCT */
 .product {
+	&__option {
+		padding-bottom: 1em;
+	}
+	&__price {
+		color: $blue;
+		font-weight: 600;
+		font-size: 150%;
+	}
+	&__options {
+		label {
+			display: block;
+			clear: both;
+		}
+	}
 	&__mynd {
 		border: 1px solid $blue-lite;
 		border-bottom: 2px solid $blue-lite;
@@ -438,7 +624,7 @@ header {
 
 /* UIKIT */
 .uk-notify-message {
-	font-size: 150%;
+	font-size: 125%;
 	background: $blue !important;
 	line-height: 100%;
 	padding: 1em;

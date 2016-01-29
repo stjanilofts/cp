@@ -43,10 +43,6 @@
         </script>
     </head>
     <body>
-
-
-
-
         <div class="haus">
             <div class="uk-grid" data-uk-grid-margin>
                 <div class="uk-width-medium-1-3 uk-hidden-small">
@@ -68,14 +64,14 @@
 
 
 
-
-        <div class="menu">
+        <div class="menu normal">
             <nav class="top">
-                {!! kalMenuExpandedAll() !!}
+                {!! kalMenuExpandedAll(['hidesmall' => true]) !!}
+                <div>
+                    <a href="#my-id" data-uk-offcanvas><i class="uk-icon-bars uk-margin-right"></i>Sjá meira</a>
+                </div>
             </nav>
         </div>
-
-
 
 
         @if(frontpage())
@@ -125,7 +121,13 @@
 
 
 
-
+        <div id="my-id" class="uk-offcanvas">
+            <div class="uk-offcanvas-bar">
+                <nav class="offcanvas">
+                    {!! kalMenuExpandedAll() !!}
+                </nav>
+            </div>
+        </div>
 
 
         <script src="/js/scripts.js"></script>
