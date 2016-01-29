@@ -30,8 +30,8 @@
 							        </ul>
 							    </div>
 
-							    <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slider-item="previous" draggable="false"></a>
-							    <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next" draggable="false"></a>
+							    <a href="#" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous" draggable="false"></a>
+							    <a href="#" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next" draggable="false"></a>
 							</div>
 						</div>
 					@endif
@@ -58,7 +58,7 @@
 				</div>
 				@endif
 
-
+				<hr>
 
 				<div class="product__options uk-margin-top">
 					<div v-for="option in options" class="product__option">

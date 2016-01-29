@@ -43,80 +43,80 @@
         </script>
     </head>
     <body>
-        <div class="haus">
-            <div class="uk-grid" data-uk-grid-margin>
-                <div class="uk-width-medium-1-3 uk-hidden-small">
-                    &nbsp;
-                </div>
-                <div class="uk-width-medium-1-3 uk-text-center">
-                    <a href="/"><img src="/img/logo.png" /></a>
-                </div>
-                <div class="uk-width-medium-1-3">
-                    <div class="cart-widget-container">
-                        @include('frontend.cart.widget')
+        <div class="page-wrap">
+            <div class="main-wrap">
+                <div class="haus">
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-medium-1-3 uk-hidden-small">
+                            &nbsp;
+                        </div>
+                        <div class="uk-width-medium-1-3 uk-text-center">
+                            <a href="/"><img src="/img/logo.png" /></a>
+                        </div>
+                        <div class="uk-width-medium-1-3">
+                            <div class="cart-widget-container">
+                                @include('frontend.cart.widget')
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
 
 
 
 
-        <div class="menu normal">
-            <nav class="top">
-                {!! kalMenuExpandedAll(['hidesmall' => true]) !!}
-                <div>
-                    <a href="#my-id" data-uk-offcanvas><i class="uk-icon-bars uk-margin-right"></i>Sjá meira</a>
+                <div class="menu normal">
+                    <nav class="top">
+                        {!! kalMenuExpandedAll(['hidesmall' => true]) !!}
+                        <div>
+                            <a href="#my-id" data-uk-offcanvas><i class="uk-icon-bars uk-margin-right"></i>Sjá meira</a>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
-        </div>
 
 
-        @if(frontpage())
-            @if(isset($forsidumyndir) && !$forsidumyndir->isEmpty())
-                <div class="forsidumyndir">
-                    <div class="uk-slidenav-position" data-uk-slideshow="{autoplay: true, autoplayInterval: 3000">
-                        <ul class="uk-slideshow">
-                            @foreach($forsidumyndir as $key => $mynd)
-                                <li>
-                                    <div class="forsidumynd" style="background-image: url('/imagecache/banner/{{ $mynd->img()->first() }}');">
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-                        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
-                        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                {{-- @if(frontpage())
+                    @if(isset($forsidumyndir) && !$forsidumyndir->isEmpty())
+                        <div class="forsidumyndir">
+                            <div class="uk-slidenav-position" data-uk-slideshow="{autoplay: true, autoplayInterval: 3000">
+                                <ul class="uk-slideshow">
+                                    @foreach($forsidumyndir as $key => $mynd)
+                                        <li>
+                                            <div class="forsidumynd" style="background-image: url('/imagecache/banner/{{ $mynd->img()->first() }}');">
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                            </div>
+                        </div>
+                    @endif
+                @endif --}}
+
+                
+
+
+
+                @if(!frontpage())
+                    <div class="content-container">
+                        <header>
+                            <h1>@yield('title')</h1>
+                        </header>
+
+                        <div class="content">
+                            @yield('content')
+                        </div>
                     </div>
-                </div>
-            @endif
-        @endif
-
-        
-
-
-
-        @if(!frontpage())
-            <div class="content-container">
-                <header>
-                    <h1>@yield('title')</h1>
-                </header>
-
-                <div class="content">
-                    @yield('content')
-                </div>
+                @endif
             </div>
-        @endif
 
 
 
-
-
-
-
-        <div class="footer">
-            Hey
+            <div class="footer">
+                <p>&copy; Crystal Peel 2016</p>
+            </div>
         </div>
 
 

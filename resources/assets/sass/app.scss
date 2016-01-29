@@ -1,12 +1,12 @@
 $blue: #008bc0;
 $blue-dark: darken($blue, 10%);
-$blue-lite: desaturate(lighten($blue, 55%), 44%);
+$blue-lite: desaturate(lighten($blue, 50%), 40%);
 $blue-lite-border: 1px solid $blue-lite;
 $grey: #606060;
 $grey2: lighten($grey, 50%);
-$bg-white: rgba(255, 255, 255, 0.95);
-$bg-white2: rgba(255, 255, 255, 0.85);
-$bg-white3: rgba(255, 255, 255, 0.75);
+$bg-white: rgba(255, 255, 255, 0.85);
+$bg-white2: rgba(255, 255, 255, 0.75);
+$bg-white3: rgba(255, 255, 255, 0.65);
 $bg-grey: rgba($grey, 0.95);
 $bg-grey2: rgba($grey, 0.85);
 $bg-grey3: rgba($grey, 0.75);
@@ -19,6 +19,8 @@ $font2: 'Josefin Sans', sans-serif;
 [v-cloak] {
 	display: none !important;
 }
+
+html, body { height: 100%; }
 
 html {
 	color: $grey !important;
@@ -135,7 +137,7 @@ button.takki {
 		line-height: 1 !important;
 	}
 	font-weight: 600 !important;
-	background: none !important;
+	background: $bg-white3 !important;
 	text-decoration: none !important;
 	line-height: 1 !important;
 	border: 1px solid $blue !important;
@@ -429,7 +431,7 @@ nav {
 	}
 	&__mynd {
 		border: 1px solid $blue-lite;
-		border-bottom: 2px solid $blue-lite;
+		clear: both;
 		a {
 			display: block;
 			text-align: center;
@@ -445,8 +447,11 @@ nav {
 	}
 	&__aukamynd {
 		text-align: center;
+		padding-bottom: 1px;
 		display: block;
+		clear: both;
 		a {
+			background: #FFF;
 			margin: 0 auto;
 			display: inline-block;
 			text-align: center;
@@ -550,16 +555,31 @@ header {
 }
 
 .footer {
+	color: #FFF !important;
+	font-weight: bold;
+	p {
+		text-align: center;
+		color: #FFF !important;
+		font-weight: bold;
+	}
 	background: $bg-grey;
-	min-height: 200px;
+	padding-top: 2em;
+	padding-bottom: 2em;
 	width: 100%;
 	display: block;
 }
 
 
+.page-wrap {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
 
 
-
+.main-wrap {
+	flex: 1;
+}
 
 
 
