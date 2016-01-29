@@ -35,7 +35,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.15/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/0.7.0/vue-resource.js"></script>
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Josefin+Sans:400,600,300|Lato:700,400,300' rel='stylesheet' type='text/css'>
 
         <script>
         Vue.config.debug = false;
@@ -44,61 +44,89 @@
     </head>
     <body>
 
+
+
+
         <div class="haus">
-            <div class="uk-grid uk-grid-collapse">
-                <div class="uk-width-medium-1-3">
+            <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-medium-1-3 uk-hidden-small">
                     &nbsp;
                 </div>
                 <div class="uk-width-medium-1-3 uk-text-center">
                     <a href="/"><img src="/img/logo.png" /></a>
                 </div>
                 <div class="uk-width-medium-1-3">
-                    <div class="cart-widget uk-float-right">
+                    <div class="cart-widget-container">
                         @include('frontend.cart.widget')
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="menu" data-uk-sticky>
+
+
+
+
+
+
+        <div class="menu">
             <nav class="top">
                 {!! kalMenuExpandedAll() !!}
             </nav>
         </div>
 
-        @if(isset($forsidumyndir) && !$forsidumyndir->isEmpty())
-            <div class="uk-container uk-container-center collapse-small uk-margin-large-top">
-            <div class="forsidumyndir">
-                <div class="uk-slidenav-position" data-uk-slideshow="{autoplay: true, autoplayInterval: 3000">
-                    <ul class="uk-slideshow">
-                        @foreach($forsidumyndir as $key => $mynd)
-                            <li>
-                                <div class="forsidumynd" style="background-image: url('/imagecache/banner/{{ $mynd->img()->first() }}');">
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
-                    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
-                    <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+
+
+
+        @if(frontpage())
+            @if(isset($forsidumyndir) && !$forsidumyndir->isEmpty())
+                <div class="forsidumyndir">
+                    <div class="uk-slidenav-position" data-uk-slideshow="{autoplay: true, autoplayInterval: 3000">
+                        <ul class="uk-slideshow">
+                            @foreach($forsidumyndir as $key => $mynd)
+                                <li>
+                                    <div class="forsidumynd" style="background-image: url('/imagecache/banner/{{ $mynd->img()->first() }}');">
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                        <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                    </div>
                 </div>
-            </div>
-            </div>
+            @endif
         @endif
 
         
-        @if(!frontpage())
-            <header>
-                <h1>@yield('title')</h1>
-            </header>
 
-            <div class="content">
-                @yield('content')
+
+
+        @if(!frontpage())
+            <div class="content-container">
+                <header>
+                    <h1>@yield('title')</h1>
+                </header>
+
+                <div class="content">
+                    @yield('content')
+                </div>
             </div>
         @endif
+
+
+
+
+
+
 
         <div class="footer">
             Hey
         </div>
+
+
+
+
+
 
         <script src="/js/scripts.js"></script>
     </body>

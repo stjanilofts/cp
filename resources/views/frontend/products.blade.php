@@ -6,7 +6,7 @@
 
 	<div class="products">
 
-		<div class="uk-grid uk-grid-match" data-uk-grid-margin data-uk-grid-match="{target:'.card'}">
+		<div class="uk-grid uk-grid-medium uk-grid-match" data-uk-grid-margin data-uk-grid-match="{target:'.card'}">
 
 			@foreach($items as $item)
 

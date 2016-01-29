@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<div class="product" id="product-view">
+	<div class="product" id="product-view" v-cloak>
 		<div class="uk-grid" data-uk-grid-margin data-uk-grid-match>
 			<div class="uk-width-medium-1-2">
 				<div class="uk-grid uk-grid-small" data-uk-grid-margin>
@@ -86,10 +86,7 @@
 							Augnablik... <i class="uk-icon-spin uk-icon-spinner uk-margin-left"></i>
 							</span>
 						</button>
-					</div>
-
-					<div v-if="added" class="uk-margin-top">
-						<a href="/karfa/" class="uk-display-inline-block takki takki--neutral" :disabled="isProcessing">
+						<a v-if="added" href="/karfa/" class="takki takki--neutral" :disabled="isProcessing">
 							Skoða körfu<i class="uk-icon-arrow-circle-o-right uk-margin-left"></i>
 						</a>
 					</div>

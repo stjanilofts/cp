@@ -4,6 +4,7 @@ elixir(function(mix) {
     mix
     .sass('app.scss')
     .browserSync({
+    	notify: true,
     	proxy: 'crystalpeel.dev'
 	});
 });
