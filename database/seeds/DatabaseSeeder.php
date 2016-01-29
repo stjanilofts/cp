@@ -387,7 +387,13 @@ Virknin er æðisleg af þessari vöru og hefur hún reynst einnig vel fyrir pso
             'Vörur', 'Af hverju húðslípun?', 'Hafa samband'
         ];
 
-        $um_okkur = makePage(['title' => 'Um Crystal Peel', 'slug' => 'um-okkur']);
+        $um_okkur = makePage(['title' => 'Um Crystal Peel', 'slug' => 'um-okkur',
+            'content' => '<h3>The Story of Crystal Peel</h3>
+<p>“The key to beautiful skin lies in exfoliation” says Lynn Lucka founder of the Crystal Peel line, who spent years developing the patented formulas.</p>
+<p>A formulation chemist with more than three decades of experience, Lynn, brought the full breadth of her skill to developing the Crystal Peel Collection. Her Crystal Peel Microdermabrasion products have long been an industry insider secret, sold exclusively by private-labeling to dermatologists, plastic surgeons and medical spas since 1999. With a greatly expanded market demand, Crystal Peel is now being sold under its own name The products are formulated under dermatologic control for maximum safety and efficacy, offering the highest performance available without a doctor’s prescription.</p>
+<p>Crystal Peel products aid in visibly reducing the appearance of fine lines and wrinkles, evening out discoloration, combating acne, reducing  cellulite, and stimulating the production of new collagen.  Leaving skin toned, glowing and fully revitalized. Crystal Peel gives no long term promises, just immediate results.</p>
+<p>The Crystal Peel Collection® has been consistently praised by dermatologists and industry publications (among them, Dermatology Times, American Spa & Dermascope) as an excellent home microdermabrasion regimen.</p>
+        ']);
 
         makePage(['slug' => 'starfsfolk', 'title' => 'Starfsfólk', 'parent_id' => $um_okkur->id]);
         makePage([
@@ -397,9 +403,63 @@ Virknin er æðisleg af þessari vöru og hefur hún reynst einnig vel fyrir pso
             'content' => '<iframe width="100%" height="400" frameborder="0" src="http://ja.is/kort/embedded/?zoom=10&x=359824&y=406933&layer=map&q=Kleifar%C3%A1s+ehf+heildverslun%2C+%C3%81rm%C3%BAla+22"></iframe>',
         ]);
 
-        foreach($pages as $page) {
+        /*foreach($pages as $page) {
             makePage(['title' => $page]);
-        }
+        }*/
+
+        makePage([
+            'title' => 'Vörur'
+        ]);
+
+        makePage([
+            'title' => 'Af hverju húðslípun?',
+            'content' => '
+<p><strong>Crystal Peel</strong> eru virkar húðvörur sem sérfræðingar í húðvandamálum þekkja og hafa unnið með en eru nú seldar þannig að hver og einn getur notið þess heima fyrir eða hvar sem er. Vörurnar eru fyrir andlit, varir og líkama.</p>
+
+<h3>Afhverju er þessi grunnur svona mikilvægur?</h3>
+
+<p>Án húðslípunar /exfoliation:</p>
+<ul>
+<li>Varnir húðarinnar eru minni</li>
+<li>Eiturefni og og óhreinindi sitja eftir</li>
+<li>Raki og næring ekki að</li>
+<li>Ójöfnur, roði og inngróin hár eða stíflur</li>
+<li>Opnar húðholur </li>
+<li>litamisjöfnun í húðinni og ójafnvægi</li>
+<li>Gróf húð, flagnandi, hrukkur</li>
+<li>Húð getur verið viðkvæm og laskast auðveldlega</li>
+</ul>
+
+<p>Með húðslípun/exfoliation:</p>
+<ul>
+<li>Húðfrumurnar eru frískar og veita vernd</li>
+<li>Eiturefni og óhreinindi heyra sögunni til</li>
+<li>Raki, D-vítamín og önnur næringarefni komast auðveldlega inn</li>
+<li>Húðin hreinsast auðveldlega og kemur í veg fyrir stíflur</li>
+<li>Húðin þéttist og dregst saman og er líflegri</li>
+<li>Full af heilbrigði og silkimjúk</li>
+<li>Húðin verður mun sterkari</li>
+</ul>
+
+<h3>Afhverju ættirðu að velja Crystal Peel?</h3>
+<p>Það eru ófáar svipaðar vörulínur á markaðnum í dag. Vörur með virkum efnum sem eru markaðsettar til heimanotkunar en Crystal Peel á þann heiður að vera brautryðjendur þar, og byrjaði það allt með skrúbbsápunni frá Crystal Peel sem að eigandinn og stofnandinn Lynn Lucka, sem er efnafræðingur, seldi um árabil beint til lýtalækna, húðsérfræðinga og á heilsulindum víða.</p>
+
+<p>Með auknum viðskiptum var ákveðið að setja línuna á markað fyrir almenning.<br>
+Crystal Peel hefur þann heiður að geta sagt að líkamsskrúbbsápan og húðslípikremið séu fyrstu vörur sinnar tegundar. Enda liggur að baki áralöng vinna í þróun vörulínunnar til að gera hana fremri en sambærilegar vörur.<br>
+Með notkun á læknisviðurkendu corundum - og magnisíum oxide kristöllunum. Sömu kristallar og eru notaðir í húðslípimeðferðum hjá meðferðaraðilum hefur Crystal Peel skapað sína sérstöðu.</p>
+
+<p>Það sem skiptir líka miklu máli í þessu er að ekki eru allar vörur sem hafa nægilega góð áhrif á húðina að þessu tagi, þannig að það að velja rétt skiptir máli fyrir toppárangur.</p>
+
+<p>Gangi ykkur vel.</p>',
+        ]);
+
+        makePage([
+            'title' => 'Hafa samband',
+            'content' => '
+<p>Hægt er að ná í okkur í síma 571-6990 eða 895-0575 Berglind</p>
+<p>E-mail:crystalpeel@gmail.com</p>
+<p>Finnið okkur á facebook www.facebook.com/crystalpeelisland</p>',
+        ]);
 
         $pics = ['slide1.jpg', 'slide2.jpg', 'slide3.jpg', 'slide4.jpg', 'slide5.jpg'];
         $forsidumyndir = makePage(['title' => 'Forsíðumyndir', 'slug' => '_forsidumyndir', 'status' => 0]);
