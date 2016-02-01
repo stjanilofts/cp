@@ -8,9 +8,10 @@ html, body {
 html {
   color: #606060 !important;
   font-size: 18px;
+  font-style: normal;
   line-height: 1.6em;
   font-family: "Josefin Sans", sans-serif;
-  background: url("/img/bg.jpg") center center no-repeat;
+  background: url("/img/bg2.jpg") center center no-repeat;
   background-size: cover;
   background-attachment: fixed; }
   html h1 {
@@ -327,6 +328,7 @@ nav.top {
   @media (max-width: 768px) {
     .cart-widget-container {
       float: none !important;
+      display: inline-block !important;
       text-align: center; } }
 
 header {
@@ -397,13 +399,13 @@ header {
   color: #FFF !important;
   font-weight: bold;
   background: rgba(96, 96, 96, 0.95);
-  padding-top: 2em;
-  padding-bottom: 2em;
-  width: 100%; }
-  .footer p {
-    text-align: center;
-    color: #FFF !important;
-    font-weight: bold; }
+  height: 80px;
+  line-height: 20px !important; }
+  .footer a {
+    line-height: 20px !important;
+    color: #FFF !important; }
+    .footer a:hover {
+      color: #FFF !important; }
 
 .page-wrap {
   display: -webkit-flex;
@@ -416,10 +418,15 @@ header {
   min-height: 100vh;
   clear: both; }
 
-.main-wrap {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
+.mainwrap {
+  position: relative;
+  min-height: 100vh; }
+  .mainwrap .footer {
+    position: absolute;
+    line-height: 20px !important;
+    bottom: 0px;
+    left: 0;
+    right: 0; }
 
 /* CARD */
 .card {

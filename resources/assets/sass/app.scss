@@ -26,6 +26,7 @@ html {
 	color: $grey !important;
 
 	font-size: 18px;
+	font-style: normal;
 	line-height: 1.6em;
 
 	h1 {
@@ -60,7 +61,7 @@ html {
 		font-family: $font2;
 	}
 
-	background: url('/img/bg.jpg') center center no-repeat;
+	background: url('/img/bg2.jpg') center center no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -479,6 +480,7 @@ nav {
 	float: right;
 	@media (max-width: 768px) {
 		float: none !important;
+		display: inline-block !important;
 		text-align: center;
 	}
 }
@@ -557,15 +559,16 @@ header {
 .footer {
 	color: #FFF !important;
 	font-weight: bold;
-	p {
-		text-align: center;
-		color: #FFF !important;
-		font-weight: bold;
-	}
 	background: $bg-grey;
-	padding-top: 2em;
-	padding-bottom: 2em;
-	width: 100%;
+	height: 80px;
+	line-height: 20px !important;
+	a {
+		line-height: 20px !important;
+		color: #FFF !important;
+		&:hover {
+			color: #FFF !important;
+		}
+	}
 }
 
 
@@ -578,8 +581,17 @@ header {
 }
 
 
-.main-wrap {
-	flex: 1;
+.mainwrap {
+	position: relative;
+	min-height: 100vh;
+
+	.footer {
+		position: absolute;
+		line-height: 20px !important;
+		bottom: 0px;
+		left: 0;
+		right: 0;
+	}
 }
 
 

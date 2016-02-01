@@ -43,79 +43,75 @@
         </script>
     </head>
     <body>
-        <div class="page-wrap">
-            <div class="main-wrap">
-                <div class="haus">
-                    <div class="uk-grid" data-uk-grid-margin>
-                        <div class="uk-width-medium-1-3 uk-hidden-small">
-                            &nbsp;
-                        </div>
-                        <div class="uk-width-medium-1-3 uk-text-center">
-                            <a href="/"><img src="/img/logo.png" /></a>
-                        </div>
-                        <div class="uk-width-medium-1-3">
-                            <div class="cart-widget-container">
-                                @include('frontend.cart.widget')
-                            </div>
-                        </div>
+        <div class="mainwrap">
+            <div class="haus">
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="uk-width-medium-1-3 uk-hidden-small">
+                        &nbsp;
+                    </div>
+                    <div class="uk-width-medium-1-3 uk-text-center">
+                        <a href="/"><img src="/img/logo2.png" /></a>
+                    </div>
+                    <div class="uk-width-medium-1-3 cart-widget-container uk-flex uk-flex-right uk-flex-middle">
+                        @include('frontend.cart.widget')
                     </div>
                 </div>
-
-
-
-
-
-
-                <div class="menu normal">
-                    <nav class="top">
-                        {!! kalMenuExpandedAll(['hidesmall' => true]) !!}
-                        <div>
-                            <a href="#my-id" data-uk-offcanvas><i class="uk-icon-bars uk-margin-right"></i>Sjá meira</a>
-                        </div>
-                    </nav>
-                </div>
-
-
-                {{-- @if(frontpage())
-                    @if(isset($forsidumyndir) && !$forsidumyndir->isEmpty())
-                        <div class="forsidumyndir">
-                            <div class="uk-slidenav-position" data-uk-slideshow="{autoplay: true, autoplayInterval: 3000">
-                                <ul class="uk-slideshow">
-                                    @foreach($forsidumyndir as $key => $mynd)
-                                        <li>
-                                            <div class="forsidumynd" style="background-image: url('/imagecache/banner/{{ $mynd->img()->first() }}');">
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
-                                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
-                            </div>
-                        </div>
-                    @endif
-                @endif --}}
-
-                
-
-
-
-                @if(!frontpage())
-                    <div class="content-container">
-                        <header>
-                            <h1>@yield('title')</h1>
-                        </header>
-
-                        <div class="content">
-                            @yield('content')
-                        </div>
-                    </div>
-                @endif
             </div>
 
 
 
-            <div class="footer">
-                <p>&copy; Crystal Peel 2016</p>
+
+
+
+            <div class="menu normal">
+                <nav class="top">
+                    {!! kalMenuExpandedAll(['hidesmall' => true]) !!}
+                    <div>
+                        <a href="#my-id" data-uk-offcanvas><i class="uk-icon-bars uk-margin-right"></i>Sjá meira</a>
+                    </div>
+                </nav>
+            </div>
+
+
+            {{-- @if(frontpage())
+                @if(isset($forsidumyndir) && !$forsidumyndir->isEmpty())
+                    <div class="forsidumyndir">
+                        <div class="uk-slidenav-position" data-uk-slideshow="{autoplay: true, autoplayInterval: 3000">
+                            <ul class="uk-slideshow">
+                                @foreach($forsidumyndir as $key => $mynd)
+                                    <li>
+                                        <div class="forsidumynd" style="background-image: url('/imagecache/banner/{{ $mynd->img()->first() }}');">
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                            <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                        </div>
+                    </div>
+                @endif
+            @endif --}}
+
+            
+
+
+
+            @if(!frontpage())
+                <div class="content-container" style="padding-bottom: 80px !important;">
+                    <header>
+                        <h1>@yield('title')</h1>
+                    </header>
+
+                    <div class="content">
+                        @yield('content')
+                    </div>
+                </div>
+            @endif
+
+
+
+            <div class="footer uk-flex uk-flex-middle uk-flex-center uk-flex-wrap">
+                <span>&copy; Crystal Peel 2016&nbsp;|&nbsp;Dalvegur 28&nbsp;|&nbsp;895-0575 / 571-6990&nbsp;|&nbsp;</span><a href="mailto:crystalpeel@crystalpeel.is">crystalpeel@crystalpeel.is</a>
             </div>
         </div>
 
