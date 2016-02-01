@@ -718,3 +718,15 @@ header {
 		color: $blue;
 	}
 }
+
+
+
+
+
+
+.uk-slidenav-position .uk-slidenav-previous {
+	left: -30px !important;
+}
+.uk-slidenav-position .uk-slidenav-next {
+	right: 30px !important;
+}

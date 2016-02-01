@@ -496,4 +496,10 @@ header {
     #cart-widget a:hover {
       color: #008bc0; }
 
+.uk-slidenav-position .uk-slidenav-previous {
+  left: -30px !important; }
+
+.uk-slidenav-position .uk-slidenav-next {
+  right: 30px !important; }
+
 /*# sourceMappingURL=app.css.map */
