@@ -52,7 +52,7 @@
                     <div class="uk-width-medium-1-3 uk-text-center">
                         <a href="/"><img src="/img/logo2.png" /></a>
                     </div>
-                    <div class="uk-width-medium-1-3 cart-widget-container uk-flex uk-flex-right uk-flex-middle">
+                    <div class="uk-width-medium-1-3 cart-widget-container uk-flex uk-flex-center uk-text-center uk-flex-middle">
                         @include('frontend.cart.widget')
                     </div>
                 </div>
