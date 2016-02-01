@@ -20,7 +20,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/components/slidenav.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/components/tooltip.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/components/sticky.min.css" rel="stylesheet">
-        <link href="/css/app.css" rel='stylesheet' type='text/css'>
+        <link href="/css/app.css?v=2" rel='stylesheet' type='text/css'>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/js/uikit.min.js"></script>
@@ -126,6 +126,6 @@
         </div>
 
 
-        <script src="/js/scripts.js"></script>
+        <script src="/js/scripts.js?v=2"></script>
     </body>
 </html>
