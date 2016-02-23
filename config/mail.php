@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'test@netvistun.is', 'name' => 'Kleifarás Dreifing'],
+    'from' => ['address' => 'test@netvistun.is', 'name' => 'Crystal Peel'],
 
     /*
     |--------------------------------------------------------------------------

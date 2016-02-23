@@ -461,6 +461,38 @@ Með notkun á læknisviðurkendu corundum - og magnisíum oxide kristöllunum. 
 <p>Finnið okkur á facebook www.facebook.com/crystalpeelisland</p>',
         ]);
 
+        makePage([
+            'title' => 'Skilmálar',
+            'slug' => '_skilmalar',
+            'status' => 0,
+            'content' =>'
+<h3>Upplýsingar um seljanda</h3>
+<p><strong>kt. 1512804209</strong><br>
+<strong>VSK nr: ekki komið</strong></p>
+
+<h3>Greitt á netinu</h3>
+<p>Hægt er að greiða með millifærslu, greiðslukorti eða netgíró í netverslun okkar.</p>
+
+<h3>Afhendingatími</h3>
+<p>Afhendingatími er að jafnaði 1-4 virkir dagar eftir að greiðsla hefur borist. Varan er send með pósti eða ef mikið liggur á að fá vöruna afhenda þá er möguleiki á að fá að sækja hana til okkar á skrifstofu okkar á Dalvegi 28, Kópavogi. Kaupandi ber ábyrgð á að tryggja það að gefið sé upp rétt heimilisfang við pöntun.</p>
+
+<h3>Pantanir</h3>
+<p>Pantanir eru afgreiddar þegar greiðsla hefur borist og fær þá kaupandi senda staðfestingu í tölvupósti. Við pöntun fyllir kaupandi út helstu upplýsingar s.s. nafn, heimilisfang og tölvupóstfang. Við pöntun samþykkir kaupandi að þessar upplýsingar fari í viðskiptavinagagnagrunn okkar. Crystal Peel  ábyrgist að farið sé með þessar upplýsingar sem trúnaðarmál og verði ekki látnar öðrum í té.</p>
+
+<h3>Verð</h3>
+<p>Crystal Peel áskilur sér fullan rétt vegna fyrirvaralausra verðbreytinga og vegna prentvillna á netsíðu okkar. Öll verð eru með 24,5 % virðisaukaskatti.</p>
+
+<h3>Sendingakostnaður</h3>
+<p>Sendingakostnaður bætist við pöntun áður en að greiðsla fer fram. Kostnaður við sendingu innanlands er 690 kr á hverja pöntun en ef verslað er fyrir 10.000 kr eða meira bjóðum við upp á fría heimsendingu. Pakkinn er sendur á næsta pósthús nema hann sé þess efnis að hann komist í gegnum bréfalúgu, þá fer hann alla leið heim. </p>
+
+<h3>Vöruskil</h3>
+<p>Hægt er að skila vöru innan 14 daga frá pöntun gegn því að varan sé ónotuð, í upprunalegum óopnuðum umbúðum með öllum merkjum á. Skilavörur eru endurgreiddar að fullu séu ofangreind skilyrði uppfyllt og varan móttekin. Sendingarkostnaður er ekki endurgreiddur nema um gallaða vöru sé að ræða. Vinsamlegast hafið samband við okkur á crystalpeel@crystalpeel.is ef skila á vöru. </p>
+
+<h3>Aðrar spurningar</h3>
+<p>Ef þú hefur fleiri spurningar, ekki hika við að hafa samband við okkur á Facebook síðunni okkar eða í gegnum mail, crystalpeel@crystalpeel.is.</p>
+            '
+        ]);
+
         $pics = ['slide1.jpg', 'slide2.jpg', 'slide3.jpg', 'slide4.jpg', 'slide5.jpg'];
         $forsidumyndir = makePage(['title' => 'Forsíðumyndir', 'slug' => '_forsidumyndir', 'status' => 0]);
         foreach($pics as $k => $v) {

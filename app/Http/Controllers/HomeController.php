@@ -49,4 +49,11 @@ class HomeController extends Controller
 
         return view('frontend.layout')->with($data);
     }
+
+    public function borgun()
+    {
+        $borgun = new \Kal\Payment\Borgun;
+        dd('test');
+    }
 }
+

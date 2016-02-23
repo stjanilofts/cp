@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->string('netfang');
             $table->string('simi');
             $table->string('heimilisfang');
+            $table->string('skilmalar');
             $table->string('pnr');
             $table->string('stadur');
             $table->string('greidslumati');

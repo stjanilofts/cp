@@ -33,6 +33,7 @@ class Order extends Model
 
             Mail::send('emails.receipt', ['order' => $order, 'items' => $order->getItems()], function ($m) use ($order) {
                 $rcpt = [
+                    'test@netvistun.is' => 'TEST',
                     $order->netfang => $order->nafn,
                 ];
                 $m->to($rcpt)->subject(config('formable.site_title'));
@@ -51,6 +52,11 @@ class Order extends Model
     public function products()
     {
         return \DB::table('order_product')->where('order_id', $this->id)->get();
+    }
+
+    public function receipt()
+    {
+        return view('frontend.receipt')->with('order', $this->order);
     }
 
     public function getItems()

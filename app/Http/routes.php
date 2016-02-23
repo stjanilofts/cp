@@ -1,6 +1,21 @@
 <?php
 
+Route::post('payment/borgun/cancel', '\App\Http\Payment\BorgunController@cancel');
+Route::post('payment/borgun/success', '\App\Http\Payment\BorgunController@success');
+Route::post('payment/borgun/successserver', '\App\Http\Payment\BorgunController@successserver');
+Route::post('payment/borgun/error', '\App\Http\Payment\BorgunController@error');
+
+Route::get('borgun', function() {
+    $order = \App\Order::where('reference', '80269g6g')->first();
+
+    $borgun = new \App\Http\Payment\Borgun($order);
+
+    return view('payment.borgun')->with('borgun', $borgun);
+});
+
+
 Route::get('vorur', 'VorukerfiController@index');
+
 Route::get('vorur/{slug?}', 'VorukerfiController@show')->where(['slug' => '.*']);
 
 Route::get('/', 'HomeController@home');

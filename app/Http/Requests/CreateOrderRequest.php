@@ -20,6 +20,7 @@ class CreateOrderRequest extends Request
             'heimilisfang'      => 'required',
             'pnr'               => 'required',
             'stadur'            => 'required',
+            'skilmalar'         => 'required',
             'greidslumati'      => 'required',
             'afhendingarmati'   => 'required',
         ];
@@ -36,6 +37,7 @@ class CreateOrderRequest extends Request
             'pnr.required'              => 'Póstnúmer vantar',
             'stadur.required'           => 'Vantar að velja stað',
             'greidslumati.required'     => 'Vantar að velja greiðslumáta',
+            'skilmalar.required'        => 'Þú verður að samykkja skilmálana til að halda áfram',
             'afhendingarmati.required'  => 'Vantar að velja afhendingaráta',
         ];
     }

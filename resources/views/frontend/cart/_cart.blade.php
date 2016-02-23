@@ -45,7 +45,7 @@
 	</div>
 
 	<div>
-   		<a v-if=" ! updatePending" class="takki" href="/checkout/">Ganga frá pöntun<i class="uk-margin-left uk-icon-arrow-circle-o-right"></i></a>
+   		<a v-if=" ! updatePending && items.length > 0" class="takki" href="/checkout/">Ganga frá pöntun<i class="uk-margin-left uk-icon-arrow-circle-o-right"></i></a>
    </div>
 
 	<div v-if="ready && items.length < 1" class="uk-text-center">

@@ -30,6 +30,7 @@ class OrdersController extends Controller
             $order = Order::create($request->all());
 
             $order->reference = \Hashids::encode($order->id);
+            $order->skilmalar = 'yes';
 
             $order->save();
 
@@ -58,13 +59,16 @@ class OrdersController extends Controller
         // Millifærsla
         if($order->greidslumati=='milli') {
             $this->confirmOrder($order);
+            return view('frontend.checkout.complete')->with('order', $order);
         }
 
         // Borgað með korti
 		if($order->greidslumati=='kort') {
-            $this->confirmOrder($order);
+            $borgun = new \App\Http\Payment\Borgun($order);
+            return view('payment.borgun.form')->with('borgun', $borgun);
 		}
     }
+
 
 
 

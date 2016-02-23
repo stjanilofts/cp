@@ -83,10 +83,20 @@
 			</div>
 
 			<div class="uk-width-medium-1-1">
-					<label>Eitthvað sem þú vilt taka fram?<br>
-						<textarea class="uk-width-1-1" rows="5" name="athugasemd" v-model="newOrder.athugasemd"></textarea>
-					</label>
-				</div>
+				<label>Eitthvað sem þú vilt taka fram?<br>
+					<textarea class="uk-width-1-1" rows="5" name="athugasemd" v-model="newOrder.athugasemd"></textarea>
+				</label>
+			</div>
+
+			<div class="uk-width-medium-1-1">
+				<label :class="{ 'errors': errors.skilmalar }">Skilmálar<br>
+					<div class="skilmalar bordered">
+						{!! getContentBySlug('_skilmalar')->content !!}
+					</div><br>
+
+					<input type="checkbox" name="skilmalar" v-model="newOrder.skilmalar"> Ég þamþykki skilmálana.<br>
+					<small class="uk-display-inline-block uk-margin-small-top" v-if="errors.skilmalar"><i class="uk-icon-exclamation-triangle uk-margin-right"></i>@{{ errors.skilmalar }}</small>
+				</label>
 			</div>
 
 			<div class="uk-width-1-1">
@@ -114,6 +124,7 @@ var checkout = new Vue({
 	        netfang: 'test@netvistun.is',
 	        simi: '414-5500',
 	        heimilisfang: 'Test 123',
+	        skilmalar: '',
 	        pnr: '123',
 	        stadur: 'Test',
 	        greidslumati: 'milli',
@@ -126,6 +137,7 @@ var checkout = new Vue({
 	        netfang: '',
 	        simi: '',
 	        heimilisfang: '',
+	        skilmalar: '',
 	        pnr: '',
 	        stadur: '',
 	        greidslumati: '',
@@ -138,6 +150,7 @@ var checkout = new Vue({
 	        netfang: '',
 	        simi: '',
 	        heimilisfang: '',
+	        skilmalar: '',
 	        pnr: '',
 	        stadur: '',
 	        greidslumati: '',
