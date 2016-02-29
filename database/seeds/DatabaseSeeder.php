@@ -388,11 +388,11 @@ Virknin er æðisleg af þessari vöru og hefur hún reynst einnig vel fyrir pso
         ];
 
         $um_okkur = makePage(['title' => 'Um Crystal Peel', 'slug' => 'um-okkur',
-            'content' => '<h3>The Story of Crystal Peel</h3>
-<p>“The key to beautiful skin lies in exfoliation” says Lynn Lucka founder of the Crystal Peel line, who spent years developing the patented formulas.</p>
-<p>A formulation chemist with more than three decades of experience, Lynn, brought the full breadth of her skill to developing the Crystal Peel Collection. Her Crystal Peel Microdermabrasion products have long been an industry insider secret, sold exclusively by private-labeling to dermatologists, plastic surgeons and medical spas since 1999. With a greatly expanded market demand, Crystal Peel is now being sold under its own name The products are formulated under dermatologic control for maximum safety and efficacy, offering the highest performance available without a doctor’s prescription.</p>
-<p>Crystal Peel products aid in visibly reducing the appearance of fine lines and wrinkles, evening out discoloration, combating acne, reducing  cellulite, and stimulating the production of new collagen.  Leaving skin toned, glowing and fully revitalized. Crystal Peel gives no long term promises, just immediate results.</p>
-<p>The Crystal Peel Collection® has been consistently praised by dermatologists and industry publications (among them, Dermatology Times, American Spa & Dermascope) as an excellent home microdermabrasion regimen.</p>
+            'content' => '<p>Crystal Peel húðvörur er heildverslun sem stofnuð er af Berglindi Kristjánsdóttir snyrtifræðing og meistara.</p>
+<p>Það er óhætt að segja að hún hafi fallið fyrir þessari vörulínu eftir að hafa komist í sambanda við stofnanda og eiganda Crystal Peel í Bandaríkjunum. Sem er einnig efnafræðingurinn á bak við formúluna.</p>
+<p>Crystal Peel eru virkar húðslípivörur til heimanotkunar og hvet ég alla að setja sig í samband við okkur til að fá frekari upplýsingar um vöruna.</p>
+<p>Hægt er að kaupa vöruna beint af okkur eða af meðferðaraðilum sem selja Crystal Peel.</p>
+<p>Ef einhverjar spurningar eru eða þið hafið áhuga á að selja vöruna, endilega sendið okkur póst á crystalpeel@crystalpeel.is.</p>
         ']);
 
         makePage(['slug' => 'starfsfolk', 'title' => 'Starfsfólk', 'parent_id' => $um_okkur->id]);

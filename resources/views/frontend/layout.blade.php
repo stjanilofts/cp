@@ -111,7 +111,7 @@
 
 
             <div class="footer uk-flex uk-flex-middle uk-flex-center uk-flex-wrap">
-                <span>&copy; Crystal Peel 2016&nbsp;|&nbsp;Dalvegur 28&nbsp;|&nbsp;895-0575 / 571-6990&nbsp;|&nbsp;</span><a href="mailto:crystalpeel@crystalpeel.is">crystalpeel@crystalpeel.is</a>
+                <span>&copy; Crystal Peel 2016&nbsp;|&nbsp;Dalvegur 28&nbsp;|&nbsp;895-0575 / 571-6990&nbsp;|&nbsp;Vsk nr. 78069&nbsp;|&nbsp;</span><a href="mailto:crystalpeel@crystalpeel.is">crystalpeel@crystalpeel.is</a>
             </div>
         </div>
 
