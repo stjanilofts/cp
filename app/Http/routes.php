@@ -78,7 +78,7 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'], function () {
 	// Formable stjórnhlutir....
 	foreach(config('formable.hlutir') as $hlutur) {
 		Route::resource(strtolower($hlutur), ucfirst($hlutur).'Controller');
-		Route::get(strtolower($hlutur).'/subs/{id}', ucfirst($hlutur).'Controller@subsIndex');
+        Route::get(strtolower($hlutur).'/subs/{id}', ucfirst($hlutur).'Controller@subsIndex');
         Route::get(strtolower($hlutur).'/prods/{id}', ucfirst($hlutur).'Controller@prodsIndex');
 	}
 
