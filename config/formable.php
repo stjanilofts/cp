@@ -7,9 +7,9 @@ return [
     'site_description' => 'Crystal Peel',
 
     'company_name' => 'Crystal Peel',
-    'company_email' => 'test@test.is',
+    'company_email' => 'crystalpeel@crystalpeel.is',
 
-    'email' => 'test@test.is',
+    'email' => 'crystalpeel@crystalpeel.is',
     
     /*
     |--------------------------------------------------------------------------
