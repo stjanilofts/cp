@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'vefur@crystalpeel.is' => 'Crystal Peel'],
+    'from' => ['address' => 'vefur@crystalpeel.is', 'name' => 'Crystal Peel'],
 
     /*
     |--------------------------------------------------------------------------
