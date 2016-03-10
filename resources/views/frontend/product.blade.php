@@ -42,6 +42,10 @@
 				<div class="product__info">
 					<h3>Lýsing</h3>
 					{!! $item->content !!}
+
+					<div class="uk-margin-top">
+						<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+					</div>
 				</div>
 
 

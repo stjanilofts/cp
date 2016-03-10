@@ -21,6 +21,7 @@ class VorukerfiController extends Controller
             $data['items'] = $prods;
         }
 
+        $data['seo'] = \App\Page::whereSlug('vorur')->first();
         $data['pagetitle'] = 'Vörur';
 
         return view('frontend.products')->with($data);
@@ -41,6 +42,7 @@ class VorukerfiController extends Controller
 
             $data['items'] = $cats->merge($prods);
             $data['pagetitle'] = $item->title;
+            $data['seo'] = $item;
 
             return view('frontend.products')->with($data);
         }
@@ -52,6 +54,7 @@ class VorukerfiController extends Controller
         }
 
         $data['item'] = $item;
+        $data['seo'] = $item;
         $data['images'] = $item->img()->all();
         $data['colors'] = $item->skirt()->all();
         $data['image'] = is_array($data['images']) && array_key_exists(0, $data['images']) ? $data['images'][0] : ['name' => $item->img()->first(), 'title' => ''];

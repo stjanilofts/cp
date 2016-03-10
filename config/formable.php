@@ -4,7 +4,7 @@ return [
 
     'site_title' => 'Crystal Peel',
 
-    'site_description' => 'Crystal Peel',
+    'site_description' => 'Crystal Peel, Dalvegi 28, sími 895-0575 / 571-6990.',
 
     'company_name' => 'Crystal Peel',
     'company_email' => 'crystalpeel@crystalpeel.is',

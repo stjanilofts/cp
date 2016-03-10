@@ -16,10 +16,18 @@
 
 				<div class="uk-width-medium-3-4">
 					{!! cmsContent($page) !!}
+
+					<div class="uk-margin-top">
+						<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+					</div>
 				</div>
 			</div>
 		@else
 			{!! cmsContent($page) !!}
+
+			<div class="uk-margin-top">
+				<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+			</div>
 		@endif
 
 
