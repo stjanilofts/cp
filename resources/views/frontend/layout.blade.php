@@ -12,7 +12,7 @@
         <meta name="description" content="{{ isset($seo) ? shortenCmsClean($seo) : config('formable.site_description') }}">
         <meta property="og:description" content="{{ isset($seo) ? shortenCmsClean($seo) : config('formable.site_description') }}">
         <meta property="og:url" content="{{ \Request::root() .'/'. \Request::path() }}">
-        <meta property="og:image" content="{{ \Request::root() }}/imagecache/facebook/{{ isset($seo) ? $seo->img()->first() : 'facebook.jpg' }}">
+        <meta property="og:image" content="{{ \Request::root() }}/imagecache/facebook/{{ isset($seo) ? ($seo->img()->first() == 'spurningamerki.jpg' ? 'facebook.jpg' : $seo->img()->first()) : 'facebook.jpg' }}">
         <meta property="og:image:width" content="600">
         <meta property="og:image:height" content="315">
 
