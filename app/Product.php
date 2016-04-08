@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Coupon;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use App\Traits\ProductOptionsTrait;
@@ -173,6 +174,17 @@ class Product extends Formable
     public function getPriceFormattedAttribute()
     {
         return $this->formatPrice($this->price);
+    }
+
+    public function getPriceAttribute($price)
+    {
+        /*$coupon = Coupon::getCurrent();
+
+        if($coupon) {
+            return ceil(abs($price - ($price * ($coupon->discount / 100))));
+        }*/
+
+        return $price;
     }
 
     public function formatPrice($price)

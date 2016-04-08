@@ -40,13 +40,21 @@
 		        	<td colspan="5" class="uk-text-right"><strong>Samtals @{{ total }}</strong></td>
 		        	<td></td>
 		       </tr>
+			   <tr>
+			       <td colspan="5" class="uk-text-right">
+						<input placeholder="Afsláttarkóði" class="uk-text-right smaller" name="coupon" v-model="coupon | uppercase coupon" /><br><button class="uk-margin-small-top takki takki--small" @click="updateCoupon">Virkja kóða</button>
+						<div v-if="coupon_message">@{{ coupon_message }}</div>
+			       </td>
+			       <td>
+			       </td>
+		       </tr>
 		    </tbody>
 		</table>
 	</div>
 
 	<div>
    		<a v-if=" ! updatePending && items.length > 0" class="takki" href="/checkout/">Ganga frá pöntun<i class="uk-margin-left uk-icon-arrow-circle-o-right"></i></a>
-   </div>
+   	</div>
 
 	<div v-if="ready && items.length < 1" class="uk-text-center">
 		<h3>Karfan er tóm!</h3>
@@ -66,6 +74,8 @@ var cart = new Vue({
 		ready: false,
 		updatingCart: true,
 		updatePending: false,
+		coupon: '{{ (\App\Coupon::getCurrent() ? strtoupper(trim(\App\Coupon::getCurrent()->title)) : '') }}',
+		coupon_message: '',
 		title: 'title',
 		total: 0,
 		//items: {!! json_encode(cartItems(), true) !!}
@@ -126,6 +136,25 @@ var cart = new Vue({
 			this.updatingCart = true;
 			this.items.splice(idx, 1);
 			this.updateCart();
+		},
+
+		updateCoupon: function() {
+			if(this.coupon.trim().length < 1) return;
+
+			this.updatingCart = true;
+			this.updatePending = true;
+
+			this.$http.post('/_vorur/update-coupon', { items: this.items, coupon: this.coupon }).then(function(response) {
+				this.coupon_message = response.data.message ? response.data.message : '';
+
+				if(response.data.status == 'error') {
+					this.$http.post('/_vorur/update-cart', { items: this.items }).then(function(response) {
+						this.getCartItems();
+					}.bind(this));
+				} else {
+					this.getCartItems();
+				}
+			}.bind(this));
 		}
 	}
 });

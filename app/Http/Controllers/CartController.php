@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Coupon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -112,7 +114,27 @@ class CartController extends Controller
             $options
         );
 
-        return response()->json(['status' => 'success', 'product' => $product], 200);
+        return response()->json(['status' => 'success', 'product' => $product->toArray()], 200);
+    }
+
+    public function updateCoupon(Request $request)
+    {
+        $couponCode = trim(strtoupper($request->get('coupon')));
+
+        if(!$couponCode) return response()->json(['status' => 'error', 'message' => ''], 200);
+
+        $coupon = Coupon::where('title', $couponCode)->first();
+
+        if(!$coupon) {
+            $request->session()->forget('coupon');
+            return response()->json(['status' => 'error', 'message' => 'Fann ekki þennan afsláttarkóða.'], 200);
+        }
+
+        $request->session()->put('coupon', $coupon->title);
+
+        $this->updateCart($request);
+
+        return response()->json(['status' => 'success', 'message' => $coupon->discount.'% afsláttur virkjaður'], 200);
     }
 
     public function updateCart(Request $request)
@@ -123,6 +145,20 @@ class CartController extends Controller
 
         foreach($items as $item) {
             $rowids[] = $item['rowid'];
+
+            $coupon = Coupon::getCurrent();
+
+            $product = \App\Product::find($item['id']);
+
+            if($product) {
+                \Cart::update($item['rowid'], ['price' => $product->price]);
+
+                if($coupon) {
+                    $price = ceil(abs($product->price - ($product->price * ($coupon->discount / 100))));
+                    \Cart::update($item['rowid'], ['price' => $price]);
+                }
+            }
+
             \Cart::update($item['rowid'], $item['qty']);
         }
 

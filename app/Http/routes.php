@@ -83,6 +83,7 @@ Route::group(['middleware'=>'auth', 'prefix' => 'admin'], function () {
 	}
 
     Route::resource('orders', 'OrdersController');
+    Route::resource('coupons', 'CouponController');
 });
 
 // Sýnir það sem er í körfunni
@@ -116,6 +117,9 @@ Route::group(['prefix' => '_vorur'], function () {
 
     // Bætir við hlut í körfu
     Route::post('update-cart', 'CartController@updateCart');
+    
+    // Bætir við hlut í körfu
+    Route::post('update-coupon', 'CartController@updateCoupon');
 
     // Bætir við hlut í körfu
     Route::post('add-to-cart', 'CartController@addToCart');

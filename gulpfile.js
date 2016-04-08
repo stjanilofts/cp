@@ -53,5 +53,9 @@ elixir(function(mix) {
 
 
 
-        .version(['css/custom.css', 'js/top.js', 'js/custom.js']);
+        //.version(['css/custom.css', 'js/top.js', 'js/custom.js']);
+
+        .browserSync({
+            proxy: 'crystalpeel.dev'
+        });
 });

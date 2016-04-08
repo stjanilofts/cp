@@ -12,7 +12,7 @@ use App\Traits\FormableExtrasTrait;
 
 class Formable extends Model
 {
-	use FormableImageTrait, ParentableTrait, TranslationTrait, FormableFileTrait, FormableExtrasTrait;
+	use FormableImageTrait, TranslationTrait, FormableFileTrait, FormableExtrasTrait, ParentableTrait;
 
 	protected $casts = [
 		'images' => 'json',

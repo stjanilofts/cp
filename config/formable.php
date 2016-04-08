@@ -23,7 +23,7 @@ return [
         'Page',
         //'News',
         'Category',
-        'Product',
+        'Product'
     ],
 
     /*

@@ -87,6 +87,10 @@ input, textarea, select {
 	border: 1px solid $blue !important;
 	padding: 0.5em;
 	font-size: 1em;
+	&.smaller {
+		padding: 0.25rem !important;
+		font-size: 0.85rem !important;
+	}
 }
 form {
 	&.basic {
@@ -145,9 +149,14 @@ button.takki {
 	color: $blue !important;
 	transition: color 0.2s, background 0.2s;
 
+	&--small {
+		padding: 0.25rem !important;
+		font-size: 0.85rem !important;
+	}
+
 	&.focus, &.active, &:hover {
 		text-transform: uppercase;
-		padding: 0.8em 1.6em;
+		/*padding: 0.8em 1.6em;*/
 		cursor: pointer;
 		background: $blue-dark !important;
 		border: 1px solid $blue-dark !important;

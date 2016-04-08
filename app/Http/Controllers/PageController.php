@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class PageController extends ItemableController
-{
+{    
     public $model = 'Page';
 
     public function show($slug)

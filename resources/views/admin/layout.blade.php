@@ -70,6 +70,7 @@
                     @endforeach
 
                     <li class="{{ (Request::is('admin/orders*') ? 'uk-active' : '') }}"><a href="/admin/orders/">Pantanir</a></li>
+                    <li class="{{ (Request::is('admin/coupons*') ? 'uk-active' : '') }}"><a href="/admin/coupons/">Afsláttarkóðar</a></li>
 			    </ul>
 
                 <div class="uk-navbar-flip">
