@@ -23,7 +23,7 @@
         <meta id="token" name="token" value="{{ csrf_token() }}">
         
         <link href="{{ elixir('css/custom.css') }}" rel='stylesheet' type='text/css'>
-        <script src="{{ elixir('js/top.js') }}"></script>-
+        <script src="{{ elixir('js/top.js') }}"></script>
         {{--<link href="/css/custom.css" rel='stylesheet' type='text/css'>
         <script src="/js/top.js"></script>--}}
 
