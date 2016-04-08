@@ -22,10 +22,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta id="token" name="token" value="{{ csrf_token() }}">
         
-        {{--<link href="{{ elixir('css/custom.css') }}" rel='stylesheet' type='text/css'>
-        <script src="{{ elixir('js/top.js') }}"></script>--}}
-        <link href="/css/custom.css" rel='stylesheet' type='text/css'>
-        <script src="/js/top.js"></script>
+        <link href="{{ elixir('css/custom.css') }}" rel='stylesheet' type='text/css'>
+        <script src="{{ elixir('js/top.js') }}"></script>-
+        {{--<link href="/css/custom.css" rel='stylesheet' type='text/css'>
+        <script src="/js/top.js"></script>--}}
 
         <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Josefin+Sans:400,600,300|Lato:700,400,300' rel='stylesheet' type='text/css'>
 
@@ -136,8 +136,8 @@
         </div>
 
 
-        {{--<script src="{{ elixir('js/custom.js') }}"></script>--}}
-        <script src="/js/custom.js"></script>
+        <script src="{{ elixir('js/custom.js') }}"></script>
+        {{--<script src="/js/custom.js"></script>--}}
 
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
