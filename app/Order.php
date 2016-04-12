@@ -34,7 +34,7 @@ class Order extends Model
             Mail::send('emails.receipt', ['order' => $order, 'items' => $order->getItems()], function ($m) use ($order) {
                 $rcpt = [
                     config('formable.email') => config('formable.site_title'),
-                    'test@netvistun.is' => 'TEST',
+                    //'test@netvistun.is' => 'TEST',
                     $order->netfang => $order->nafn,
                 ];
                 $m->to($rcpt)->subject(config('formable.site_title'));

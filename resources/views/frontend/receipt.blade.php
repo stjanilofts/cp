@@ -8,6 +8,11 @@
 	<p style="font-family: Arial, Helvetica, sans-serif;"><strong>Afhendingarmáti:</strong> {{ ($order->getShippingOption()) }}</p>
 	<p style="font-family: Arial, Helvetica, sans-serif;"><strong>Greiðslumáti:</strong> {{ ($order->getPaymentOption()) }}</p>
 
+	@if($order->greidslumati == 'milli')
+		<p style="font-family: Arial, Helvetica, sans-serif;">Vinsamlegast millifærið inná reikning okkar og sendu kvittun á <a href="mailto:crystalpeel@crystalpeel.is">crystalpeel@crystalpeel.is</a>.</p>
+		<p>Banki: 1106, Höfuðbók: 26, Reikningsnúmer: 141, kt. 1512804209.</p>
+	@endif
+
 	<h3 style="font-family: Arial, Helvetica, sans-serif;">Pöntun</h3>
 	<table style="border-collapse: collapse; border: 1px solid #DDDDDD;">
 		<tr>
